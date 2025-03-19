@@ -1,4 +1,5 @@
 import 'package:ecom_ui/components/bottom_nav.dart';
+import 'package:ecom_ui/components/my_drawer/menu_icon.dart';
 import 'package:ecom_ui/components/my_drawer/my_drawer.dart';
 import 'package:ecom_ui/pages/cart_page.dart';
 import 'package:ecom_ui/pages/shop_page.dart';
@@ -34,24 +35,8 @@ class _HomePageState extends State<HomePage> {
 
       // App bar
       appBar: AppBar(
-        leading: Builder(
-          builder: (context) {
-            return IconButton(
-              onPressed: () => Scaffold.of(context).openDrawer(),
-              icon: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(width: 24, height: 2, color: Colors.black),
-
-                  const SizedBox(height: 6),
-
-                  Container(width: 33, height: 2, color: Colors.black),
-                ],
-              ),
-            );
-          },
-        ),
+        leadingWidth: MediaQuery.of(context).size.width * 0.2,
+        leading: MenuIcon(),
         backgroundColor: Colors.transparent,
       ),
 
